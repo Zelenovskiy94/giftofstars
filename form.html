@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gift of stars</title>
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style-main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/baguetteBox.min.css">
+	<script src="js/particles.min.js"></script>
+	<link rel="stylesheet" href="css/adaptive-main.css">
+</head>
+<body>
+	<header style="height: auto;">
+		<nav>
+<svg id='logo' width='120' height='110'>
+						<g class='logo-circle'>
+							<circle cx='5' cy='70' r='3'/>
+							<circle cx='55' cy='90' r='3'/>
+							<circle cx='75' cy='82' r='3'/>
+							<circle cx='95' cy='98' r='3'/>
+							<circle cx='110' cy='65' r='3'/>
+							<circle cx='15' cy='90' r='1.5'/>
+							<circle cx='48' cy='93' r='1.5'/>
+							<circle cx='77' cy='87' r='1.5'/>
+							<circle cx='87' cy='95' r='1.5'/>
+							<circle cx='98' cy='75' r='1.5'/>
+							<circle cx='84' cy='105' r='1.5'/>
+						</g>
+			<path id='logo-line' d='M5 70 55 90 75 82 95 98 110 65' stroke='#fff' fill="none" stroke-width='2'/>
+			<text x='2' y='45' class='logo-style'>Gift</text>
+			<text x='47' y='31' class='logo-style'>of</text>
+			<text x='64' y='45' class='logo-style'>Stars</text>
+		</svg>
+			<ul class="main-nav">
+				<li><a href="editor.html">Создать карту</a></li>
+				<li><a href="#">Как это работает</a></li>
+				<li><a href="#">Отзывы</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="main-form">
+		<section class="wrapper">
+			<form action="post" class="form-block clearfix">
+				<h2 style="margin-top: 0; margin-bottom: 30px;">Оформление заказа</h2>
+				<div class="form">
+					<div class="name-not-valid">
+						<label for="name-form">Ваше имя:</label>
+						<input type="text" id="name-form" />					
+					</div>
+					<div>
+						<label for="email-form">E-mail:</label>
+						<input type="text" id="email-form" />
+					</div>
+					<div class="">
+						<label for="phone-form">Телефон:</label>
+						<input type="text" id="phone-form" />
+					</div>
+					<div>
+						<label for="message-form">Пожелания:</label>
+						<textarea id="message-form"></textarea>
+					</div>
+				</div>
+
+				<div class="btns-radio">
+					<div>
+						<input type="radio" name="a" id="delivery-btn" onclick="visiblePickup()"/>
+						<label for="delivery-btn">Доставка</label>						
+					</div>
+					<div>
+						<input type="radio" name="a" id="pickup-btn" checked  onclick="visiblePickup()"/> 
+						<label for="pickup-btn">Самовывоз</label>						
+					</div>
+				</div>
+				<div class="reception">
+					<div class="delivery">
+						<span>
+							Внимание! Доставка до дивана осуществляется только в пределах Минска. В другие города отправляем почтой
+						</span>
+						<br>
+						<span class="cost-delivery">Стоимость доставки 5р.</span>
+						<div class="adress">
+							<label for="adress-form">Адрес доставки:</label>
+							<input type="text" id="adress-form"/>
+						</div>
+						
+					</div>
+					<span class="pickup">Самовывоз осуществляется по адресу г.Минск, Одоевского 115а</span>					
+				</div>
+
+				<button type='submit' class="btn-sent">Отправить</button>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<div class="wrapper">
+			Контакты
+		</div>
+	</footer>
+	<script>
+		function visiblePickup(){
+			let deliveryBtn = document.querySelector('#delivery-btn')
+			let pickupBtn = document.querySelector('#pickup-btn')
+			let delivery = document.querySelector('.delivery')
+			let pickup = document.querySelector('.pickup')
+			if(pickupBtn.checked) {
+				pickup.style.display = 'block';
+				delivery.style.display = 'none'
+			}
+			if(deliveryBtn.checked) {
+				pickup.style.display = 'none';
+				delivery.style.display = 'block'
+			}
+		}
+		visiblePickup()
+	</script>
+	<script src="js/validation.js"></script>
+</body>
+</html>
